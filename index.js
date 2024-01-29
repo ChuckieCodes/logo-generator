@@ -65,7 +65,7 @@ function init() {
         // console.log(shapeObj.render());
 
         // file path
-        const filePath = 'logo.svg';
+        const filePath = './examples/logo.svg';
 
         // svg template
         const svgTemplate = `
