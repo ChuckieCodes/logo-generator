@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 // shapes
-const { Circle } = require('./lib/shapes');
+const { Circle, Triangle, Square } = require('./lib/shapes');
 
 const questions = [
   {
@@ -44,12 +44,20 @@ function init() {
       } 
       else {
         // destructure answers
-        const { text, textColor, shapeColor } = answers;
+        const { text, textColor, shape, shapeColor } = answers;
 
-        // handle shape
+        // figure what shape
         let shapeObj;
 
-        shapeObj = new Circle();
+        if (shape === 'circle') {
+          shapeObj = new Circle();
+        }
+        else if (shape === 'triangle') {
+          shapeObj = new Triangle();
+        }
+        else if (shape === 'square') {
+          shapeObj = new Square();
+        }
 
         shapeObj.setColor(shapeColor);
 
